@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/dashboard', function () {
+    dd('ada di dashboard');
+})->middleware(['verified']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
